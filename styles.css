@@ -134,6 +134,29 @@ html {
     animation: fadeInUp 1s ease-out;
 }
 
+.slider{
+    margin: 0 auto;
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 600%;
+    height: 200px;
+    display: flex;
+}
+
+.slide{
+    width: 25%;
+    position: relative;
+}
+
+.slide img{
+    width: 400px;
+    object-fit: contain;
+}
+
 .hero-content p {
     font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.9);
@@ -355,6 +378,13 @@ html {
     justify-content: center;
     color: var(--text-dark); 
     font-size: 1.2rem;
+}
+
+.contact-icon img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .contact-form {
