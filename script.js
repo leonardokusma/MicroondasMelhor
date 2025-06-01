@@ -1,4 +1,4 @@
-// ===== DOM CONTENT LOADED =====
+
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
@@ -208,7 +208,9 @@ window.addEventListener('error', function(e) {
 });
 
 // ===== PERFORMANCE MONITORING =====
-window.addEventListener('load', function() {
+window.addEventListener('load', function(){
     // Log page load time for performance monitoring
     const loadTime = performance.now();
     console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
+}
+)
