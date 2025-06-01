@@ -19,7 +19,7 @@
     --gradient: linear-gradient(135deg, #FFC085 0%, #FFA050 100%);
     --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
     --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.1);
-
+    --header-height: 90px;
 }
 
 body {
@@ -39,6 +39,7 @@ html {
     position: fixed;
     top: 0;
     width: 100%;
+    height: var(--header-height);
     background: var(--bg-light);
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -50,6 +51,7 @@ html {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 2rem;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +59,7 @@ html {
 
 .logo-img {
     width: auto;
-    height: 70px;
+    height: 60px; 
 }
 
 .nav-links {
@@ -94,7 +96,7 @@ html {
     box-shadow: var(--shadow-hover);
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO SECTION - CORRIGIDO ===== */
 .hero {
     min-height: 100vh;
     background: var(--gradient);
@@ -102,6 +104,7 @@ html {
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding-top: var(--header-height);
 }
 
 .hero::before {
@@ -125,7 +128,11 @@ html {
     align-items: center;
     position: relative;
     z-index: 1;
+<<<<<<< HEAD
     min-height: calc(100vh - 4rem);
+=======
+    min-height: calc(100vh - var(--header-height));
+>>>>>>> 006fb09b5642d6326e999de52ed56b6b507ce16c
 }
 
 .hero-content h1 {
@@ -143,10 +150,11 @@ html {
     width: 400px;
     height: 200px;
     overflow: hidden;
+    position: relative; 
 }
 
 .slides {
-    width: 600%;
+    width: 500%;
     height: 200px;
     display: flex;
 }
@@ -156,25 +164,31 @@ html {
 }
 
 .slide {
-    width: 25%;
+    width: 20%; 
     position: relative;
     transition: 2s;
 }
 
 .slide img {
     width: 400px;
+<<<<<<< HEAD
     height: 200px;
     object-fit: cover;
     object-position: center;
+=======
+    height: 200px; 
+    object-fit: cover;
+    object-position: center; 
+>>>>>>> 006fb09b5642d6326e999de52ed56b6b507ce16c
 }
 
 .manual-navigation {
     position: absolute;
-    bottom: -50px;
+    bottom: -40px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
 }
@@ -191,7 +205,7 @@ html {
 }
 
 .manual-btn:not(:last-child) {
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 .manual-btn:hover {
@@ -212,21 +226,20 @@ html {
 }
 
 #radio2:checked~.first {
-    margin-left: -25%;
+    margin-left: -20%;
 }
 
 #radio3:checked~.first {
-    margin-left: -50%;
+    margin-left: -40%;
 }
 
 #radio4:checked~.first {
-    margin-left: -75%;
+    margin-left: -60%;
 }
 
 #radio5:checked~.first {
-    margin-left: -100%;
+    margin-left: -80%;
 }
-
 
 .hero-content p {
     font-size: 1.25rem;
@@ -535,7 +548,6 @@ html {
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -547,7 +559,6 @@ html {
         opacity: 0;
         transform: translateX(30px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
@@ -555,31 +566,60 @@ html {
 }
 
 @keyframes float {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0px);
     }
-
     50% {
         transform: translateY(-20px);
     }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE DESIGN - CORRIGIDO ===== */
 @media (max-width: 768px) {
+    :root {
+        --header-height: 80px;
+    }
+
     .nav-links {
         display: none;
+    }
+
+    .nav-container {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo-img {
+        height: 50px;
+    }
+
+    .hero {
+        padding-top: var(--header-height);
     }
 
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        padding: 1rem;
+        min-height: calc(100vh - var(--header-height));
     }
 
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+
+    .slider {
+        width: 350px;
+        height: 180px;
+    }
+
+    .slide img {
+        width: 350px;
+        height: 180px;
+    }
+
+    .manual-navigation {
+        bottom: -30px;
     }
 
     .contact-container {
@@ -594,20 +634,66 @@ html {
     .services-grid {
         grid-template-columns: 1fr;
     }
+
+    .services {
+        padding: 4rem 1rem;
+    }
+
+    .contact {
+        padding: 4rem 1rem;
+    }
 }
 
 @media (max-width: 480px) {
+    :root {
+        --header-height: 70px;
+    }
+
     .hero-content h1 {
         font-size: 2rem;
     }
 
     .nav-container {
-        padding: 1rem;
+        padding: 0.5rem;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    .slider {
+        width: 300px;
+        height: 150px;
+    }
+
+    .slide img {
+        width: 300px;
+        height: 150px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
     }
 
     .services,
     .contact {
-        padding: 4rem 1rem;
+        padding: 3rem 1rem;
+    }
+
+    .service-card {
+        padding: 2rem;
+    }
+
+    .contact-form {
+        padding: 2rem;
     }
 }
 
@@ -627,4 +713,25 @@ html {
 .submit-btn:focus {
     outline: 3px solid var(--secondary-color);
     outline-offset: 2px;
+}
+
+/* ===== MELHORIAS ADICIONAIS ===== */
+.header.scrolled {
+    background: rgba(255, 248, 240, 0.95);
+    box-shadow: var(--shadow);
+}
+
+section {
+    scroll-margin-top: var(--header-height);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .manual-btn {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .manual-btn:not(:last-child) {
+        margin-right: 15px;
+    }
 }
