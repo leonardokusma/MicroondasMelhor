@@ -59,7 +59,8 @@ function handleSubmit(event) {
     const whatsappMessage = createWhatsAppMessage({ nome, telefone, email, mensagem });
 
     // WhatsApp URL (replace with actual number)
-    const whatsappURL = `https://wa.me/5541999999999?text=${encodeURIComponent(whatsappMessage)}`;
+    let numero = 5541997971070
+    const whatsappURL = `https://wa.me/${numero}?text=${encodeURIComponent(whatsappMessage)}`;
 
     // Open WhatsApp
     window.open(whatsappURL, '_blank');
@@ -103,7 +104,7 @@ function isValidEmail(email) {
 
 // ===== WHATSAPP MESSAGE CREATION =====
 function createWhatsAppMessage({ nome, telefone, email, mensagem }) {
-    return `Olá! Gostaria de solicitar um orçamento para conserto de microondas.
+    return `Olá! Gostaria de solicitar um orçamento para conserto de micro-ondas.
 
 *Nome:* ${nome}
 *Telefone:* ${telefone}
