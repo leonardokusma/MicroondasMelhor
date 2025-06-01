@@ -1,28 +1,8 @@
-<<<<<<< HEAD
-let count = 1;
-
-document.getElementById("radio1").checked = true
-
-setInterval(function(){
-    nextImagem()
-},3000)
-
-function nextImagem(){
-    count ++;
-    if(count>5){
-        count = 1;
-    }
-
-    document.getElementById("radio" + count).checked = true;
-}
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
-=======
->>>>>>> 5145384e315048346a9c1e76d85fa5de42b381f6
+
 // ===== MAIN INITIALIZATION =====
 function initializeApp() {
     setupFormHandler();

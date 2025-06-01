@@ -114,7 +114,9 @@ html {
 }
 
 .hero-container {
-    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 2rem;
     display: grid;
@@ -123,9 +125,11 @@ html {
     align-items: center;
     position: relative;
     z-index: 1;
+    min-height: calc(100vh - 4rem);
 }
 
 .hero-content h1 {
+    padding-top: 2rem;
     font-size: 3.5rem;
     font-weight: 700;
     color: white;
@@ -158,10 +162,10 @@ html {
 }
 
 .slide img {
- width: 400px;
-height: 200px; 
-object-fit: cover;
-object-position: center; 
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .manual-navigation {
@@ -514,7 +518,7 @@ object-position: center;
 
 /* ===== FOOTER ===== */
 .footer {
-    background: var(--primary-dark); 
+    background: var(--primary-dark);
     color: white;
     padding: 2rem;
     text-align: center;
