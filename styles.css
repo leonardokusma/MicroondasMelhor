@@ -128,11 +128,7 @@ html {
     align-items: center;
     position: relative;
     z-index: 1;
-<<<<<<< HEAD
-    min-height: calc(100vh - 4rem);
-=======
     min-height: calc(100vh - var(--header-height));
->>>>>>> 006fb09b5642d6326e999de52ed56b6b507ce16c
 }
 
 .hero-content h1 {
@@ -171,15 +167,9 @@ html {
 
 .slide img {
     width: 400px;
-<<<<<<< HEAD
     height: 200px;
     object-fit: cover;
     object-position: center;
-=======
-    height: 200px; 
-    object-fit: cover;
-    object-position: center; 
->>>>>>> 006fb09b5642d6326e999de52ed56b6b507ce16c
 }
 
 .manual-navigation {
