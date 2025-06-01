@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeApp();
 });
 
@@ -15,24 +15,21 @@ function initializeApp() {
 
 let count = 1;
 
-document.getElementById("radio1").checked = true
+document.getElementById("radio1").checked = true;
 
 setInterval(function () {
-    nextImagem()
-}, 3000)
+    nextImagem();
+}, 3000);
 
 function nextImagem() {
     count++;
-    if (count > 5) {
+    if (count > 7) {
         count = 1;
     }
 
     document.getElementById("radio" + count).checked = true;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    initializeApp();
-});
 
 // ===== FORM SUBMISSION HANDLER =====
 function setupFormHandler() {

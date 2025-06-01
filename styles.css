@@ -59,7 +59,7 @@ html {
 
 .logo-img {
     width: auto;
-    height: 60px; 
+    height: 60px;
 }
 
 .nav-links {
@@ -146,7 +146,7 @@ html {
     width: 400px;
     height: 200px;
     overflow: hidden;
-    position: relative; 
+    position: relative;
 }
 
 .slides {
@@ -160,7 +160,7 @@ html {
 }
 
 .slide {
-    width: 20%; 
+    width: 20%;
     position: relative;
     transition: 2s;
 }
@@ -206,7 +206,9 @@ html {
 #radio2:checked~.manual-navigation .manual-btn:nth-child(2),
 #radio3:checked~.manual-navigation .manual-btn:nth-child(3),
 #radio4:checked~.manual-navigation .manual-btn:nth-child(4),
-#radio5:checked~.manual-navigation .manual-btn:nth-child(5) {
+#radio5:checked~.manual-navigation .manual-btn:nth-child(5),
+#radio6:checked~.manual-navigation .manual-btn:nth-child(6),
+#radio7:checked~.manual-navigation .manual-btn:nth-child(7) {
     background-color: #ffffff;
     transform: scale(1.2);
 }
@@ -229,6 +231,14 @@ html {
 
 #radio5:checked~.first {
     margin-left: -80%;
+}
+
+#radio6:checked~.first {
+    margin-left: -100%;
+}
+
+#radio7:checked~.first {
+    margin-left: -120%;
 }
 
 .hero-content p {
@@ -538,6 +548,7 @@ html {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -549,6 +560,7 @@ html {
         opacity: 0;
         transform: translateX(30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -556,9 +568,12 @@ html {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -720,7 +735,7 @@ section {
         width: 20px;
         height: 20px;
     }
-    
+
     .manual-btn:not(:last-child) {
         margin-right: 15px;
     }
