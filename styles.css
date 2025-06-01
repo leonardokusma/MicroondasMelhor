@@ -447,7 +447,7 @@ html {
 
 /* ===== FOOTER ===== */
 .footer {
-    background: var(--accent-color); 
+    background: var(--primary-dark); 
     color: white;
     padding: 2rem;
     text-align: center;
