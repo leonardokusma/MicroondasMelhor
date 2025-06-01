@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let count = 1;
 
 document.getElementById("radio1").checked = true
@@ -20,6 +21,8 @@ function nextImagem(){
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
+=======
+>>>>>>> 5145384e315048346a9c1e76d85fa5de42b381f6
 // ===== MAIN INITIALIZATION =====
 function initializeApp() {
     setupFormHandler();
@@ -28,10 +31,33 @@ function initializeApp() {
     setupScrollAnimations();
 }
 
+// ===== CAROUSEL SETUP =====
+
+let count = 1;
+
+document.getElementById("radio1").checked = true
+
+setInterval(function () {
+    nextImagem()
+}, 3000)
+
+function nextImagem() {
+    count++;
+    if (count > 5) {
+        count = 1;
+    }
+
+    document.getElementById("radio" + count).checked = true;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    initializeApp();
+});
+
 // ===== FORM SUBMISSION HANDLER =====
 function setupFormHandler() {
     const contactForm = document.getElementById('contact-form');
-    
+
     if (contactForm) {
         contactForm.addEventListener('submit', handleSubmit);
     }
@@ -39,31 +65,31 @@ function setupFormHandler() {
 
 function handleSubmit(event) {
     event.preventDefault();
-    
+
     // Get form data
     const formData = new FormData(event.target);
     const nome = formData.get('nome');
     const telefone = formData.get('telefone');
     const email = formData.get('email');
     const mensagem = formData.get('mensagem');
-    
+
     // Validate form data
     if (!validateFormData({ nome, telefone, email, mensagem })) {
         return;
     }
-    
+
     // Create WhatsApp message
     const whatsappMessage = createWhatsAppMessage({ nome, telefone, email, mensagem });
-    
+
     // WhatsApp URL (replace with actual number)
     const whatsappURL = `https://wa.me/5541999999999?text=${encodeURIComponent(whatsappMessage)}`;
-    
+
     // Open WhatsApp
     window.open(whatsappURL, '_blank');
-    
+
     // Show success message
     showSuccessMessage();
-    
+
     // Reset form
     event.target.reset();
 }
@@ -74,22 +100,22 @@ function validateFormData({ nome, telefone, email, mensagem }) {
         alert('Por favor, preencha o nome completo.');
         return false;
     }
-    
+
     if (!telefone.trim()) {
         alert('Por favor, preencha o telefone.');
         return false;
     }
-    
+
     if (!email.trim() || !isValidEmail(email)) {
         alert('Por favor, preencha um email válido.');
         return false;
     }
-    
+
     if (!mensagem.trim()) {
         alert('Por favor, descreva o problema do seu microondas.');
         return false;
     }
-    
+
     return true;
 }
 
@@ -118,7 +144,7 @@ function showSuccessMessage() {
 // ===== SMOOTH SCROLLING =====
 function setupSmoothScrolling() {
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    
+
     anchorLinks.forEach(anchor => {
         anchor.addEventListener('click', handleSmoothScroll);
     });
@@ -126,10 +152,10 @@ function setupSmoothScrolling() {
 
 function handleSmoothScroll(e) {
     e.preventDefault();
-    
+
     const targetId = this.getAttribute('href');
     const target = document.querySelector(targetId);
-    
+
     if (target) {
         target.scrollIntoView({
             behavior: 'smooth',
@@ -145,9 +171,9 @@ function setupHeaderEffects() {
 
 function handleHeaderScroll() {
     const header = document.querySelector('.header');
-    
+
     if (!header) return;
-    
+
     if (window.scrollY > 100) {
         header.style.background = 'rgba(255, 255, 255, 0.98)';
         header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
@@ -165,7 +191,7 @@ function setupScrollAnimations() {
     };
 
     const observer = new IntersectionObserver(handleIntersection, observerOptions);
-    
+
     // Observe service cards
     const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach(card => {
@@ -207,7 +233,7 @@ function debounce(func, wait) {
 // Throttle function for scroll events
 function throttle(func, limit) {
     let inThrottle;
-    return function() {
+    return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
@@ -219,13 +245,13 @@ function throttle(func, limit) {
 }
 
 // ===== ERROR HANDLING =====
-window.addEventListener('error', function(e) {
+window.addEventListener('error', function (e) {
     console.error('JavaScript Error:', e.error);
     // You can add error reporting here
 });
 
 // ===== PERFORMANCE MONITORING =====
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
     // Log page load time for performance monitoring
     const loadTime = performance.now();
     console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
